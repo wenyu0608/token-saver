@@ -1,0 +1,6 @@
+interface:
+  display_name: "Token Audit"
+  short_description: "Measure where agent context tokens are being spent"
+  default_prompt: "Use $token-audit to identify the largest avoidable context costs in this task."
+policy:
+  allow_implicit_invocation: false

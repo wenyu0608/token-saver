@@ -1,0 +1,6 @@
+interface:
+  display_name: "Docs Slice"
+  short_description: "Retrieve only the document sections needed for a question"
+  default_prompt: "Use $docs-slice to answer from the smallest relevant documentation excerpts."
+policy:
+  allow_implicit_invocation: false

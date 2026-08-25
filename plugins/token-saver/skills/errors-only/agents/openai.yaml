@@ -1,0 +1,6 @@
+interface:
+  display_name: "Errors Only"
+  short_description: "Run noisy commands while retaining only actionable failures"
+  default_prompt: "Use $errors-only to run the requested command and return only actionable failures."
+policy:
+  allow_implicit_invocation: false

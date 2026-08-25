@@ -1,0 +1,6 @@
+interface:
+  display_name: "Diff Context"
+  short_description: "Inspect only changed code and its minimal dependencies"
+  default_prompt: "Use $diff-context to review the current changes with minimal file context."
+policy:
+  allow_implicit_invocation: false

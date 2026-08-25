@@ -1,0 +1,6 @@
+interface:
+  display_name: "Session Handoff"
+  short_description: "Create a compact verified handoff for a fresh task"
+  default_prompt: "Use $session-handoff to create a compact continuation brief for this task."
+policy:
+  allow_implicit_invocation: false

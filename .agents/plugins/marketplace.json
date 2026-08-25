@@ -1,0 +1,20 @@
+{
+  "name": "token-saver",
+  "interface": {
+    "displayName": "Token Saver"
+  },
+  "plugins": [
+    {
+      "name": "token-saver",
+      "source": {
+        "source": "local",
+        "path": "./plugins/token-saver"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

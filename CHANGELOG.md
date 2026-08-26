@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.3-alpha.1 - 2026-08-26
+
+### Added
+
+- Native Claude Code plugin manifest and GitHub-backed marketplace catalog.
+- Claude Code installation, update, invocation, and local validation guide.
+
+### Changed
+
+- Repomix resolves both Claude Code and Codex plugin root/data conventions.
+- The shared skill wording no longer assumes a Codex-only host.
+
 ## v0.3.2-alpha.5 - 2026-08-26
 
 ### Changed

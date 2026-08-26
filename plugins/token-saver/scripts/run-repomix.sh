@@ -19,7 +19,8 @@ if [[ "${TOKEN_SAVER_ALLOW_DOWNLOAD:-0}" != "1" ]]; then
   exit 69
 fi
 
-cache_root="${PLUGIN_DATA:-${TMPDIR:-/tmp}/token-saver-data}/npm-cache"
+data_root="${CLAUDE_PLUGIN_DATA:-${PLUGIN_DATA:-${TMPDIR:-/tmp}/token-saver-data}}"
+cache_root="${data_root}/npm-cache"
 mkdir -p "$cache_root"
 export npm_config_cache="$cache_root"
 exec npx --yes "repomix@${REPOMIX_VERSION}" "$@"

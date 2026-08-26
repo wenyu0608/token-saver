@@ -1,6 +1,6 @@
 ---
 name: repomix
-description: Build a compressed, token-efficient map of a repository with Repomix before analyzing or changing an unfamiliar codebase. Invoke explicitly with $repomix when repository-wide context is useful; do not use for a known single-file task.
+description: Build a compressed, token-efficient map of a repository with Repomix before analyzing or changing an unfamiliar codebase. Invoke explicitly with the host's Repomix skill command when repository-wide context is useful; do not use for a known single-file task.
 ---
 
 # Repomix
@@ -10,7 +10,7 @@ Use Repomix as a discovery layer, not as the source to edit.
 ## Workflow
 
 1. Resolve the repository root and the narrowest useful scope from the user's request. Prefer a relevant directory such as `src/` over the entire repository when possible.
-2. Invoke `${PLUGIN_ROOT}/scripts/run-repomix.sh`. It prefers an existing local CLI; if none exists, request authorization for the wrapper's pinned one-time npm download. Never set `TOKEN_SAVER_ALLOW_DOWNLOAD=1` without that authorization.
+2. Resolve the plugin root from `${CLAUDE_PLUGIN_ROOT}` in Claude Code or `${PLUGIN_ROOT}` in Codex, then invoke `<plugin-root>/scripts/run-repomix.sh`. It prefers an existing local CLI; if none exists, request authorization for the wrapper's pinned one-time npm download. Never set `TOKEN_SAVER_ALLOW_DOWNLOAD=1` without that authorization.
 3. Create a temporary directory with `mktemp -d`. Run the wrapper from the repository root with `--compress` and an explicit output path inside that temporary directory. Respect existing ignore files and add `--include` or `--ignore` only when the task provides a clear boundary.
 4. Read the compressed output to identify entry points, dependencies, and the smallest set of relevant original files. If the output is still very large, narrow the scope before reading it in full.
 5. Continue the user's task using original source files. Never edit, commit, or treat the Repomix output as authoritative source code.
@@ -25,4 +25,4 @@ Use Repomix as a discovery layer, not as the source to edit.
 
 ## Safety
 
-Repomix output can contain source code and secrets that were not ignored. Keep generated output local and temporary. Do not upload or transmit it to another service beyond the model interaction already authorized by the current Codex task.
+Repomix output can contain source code and secrets that were not ignored. Keep generated output local and temporary. Do not upload or transmit it to another service beyond the model interaction already authorized by the current agent task.

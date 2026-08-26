@@ -2,7 +2,7 @@
 
 **Save AI tokens without losing the context that keeps answers correct.**
 
-[Website](https://wenyu0608.github.io/token-saver/) · [Latest release](https://github.com/wenyu0608/token-saver/releases/tag/v0.3.2-alpha.4)
+[Website](https://wenyu0608.github.io/token-saver/) · [Latest release](https://github.com/wenyu0608/token-saver/releases/tag/v0.3.2-alpha.5)
 
 Token Saver gives coding agents a budget brain: it skips overhead on simple tasks, focuses large repositories, documents, and logs, and preserves full evidence when correctness matters.
 
@@ -26,6 +26,8 @@ The umbrella `$token-saver` skill supports automatic selection. The six speciali
 
 ## Install
 
+### Codex
+
 ```bash
 codex plugin marketplace add wenyu0608/token-saver --ref main
 codex plugin add token-saver@token-saver
@@ -37,13 +39,40 @@ Restart Codex, then invoke a skill such as:
 $token-saver diagnose the failing test without dumping the full build log
 ```
 
-### Update
+### Claude Code
+
+Run these commands inside Claude Code:
+
+```text
+/plugin marketplace add wenyu0608/token-saver
+/plugin install token-saver@token-saver
+/reload-plugins
+```
+
+Then invoke the namespaced skill:
+
+```text
+/token-saver:token-saver diagnose the failing test without dumping the full build log
+```
+
+See the [Claude Code adapter guide](docs/CLAUDE_CODE.md) for specialist commands,
+updates, and local validation.
+
+### Update Codex
 
 Git marketplace installs are cached and do not update live. Refresh the marketplace, reinstall the plugin, then start a new Codex task:
 
 ```bash
 codex plugin marketplace upgrade token-saver
 codex plugin add token-saver@token-saver
+```
+
+### Update Claude Code
+
+```text
+/plugin marketplace update token-saver
+/plugin update token-saver@token-saver
+/reload-plugins
 ```
 
 ## Real-world example: understand DreamZero

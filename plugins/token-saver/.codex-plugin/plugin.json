@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "Five explicit workflows that reduce avoidable coding-agent context.",
   "author": {
-    "name": "cocolwy",
-    "url": "https://github.com/cocolwy"
+    "name": "wenyu0608",
+    "url": "https://github.com/wenyu0608"
   },
-  "repository": "https://github.com/cocolwy/token-saver",
-  "homepage": "https://github.com/cocolwy/token-saver#readme",
+  "repository": "https://github.com/wenyu0608/token-saver",
+  "homepage": "https://github.com/wenyu0608/token-saver#readme",
   "license": "MIT",
   "keywords": ["codex", "skills", "token-efficiency", "context-engineering"],
   "skills": "./skills/",
@@ -15,7 +15,7 @@
     "displayName": "Token Saver",
     "shortDescription": "Reduce noisy context before it reaches the model.",
     "longDescription": "Audit context overhead, filter command failures, inspect focused diffs, create session handoffs, and retrieve narrow documentation slices.",
-    "developerName": "cocolwy",
+    "developerName": "wenyu0608",
     "category": "Productivity",
     "capabilities": ["Context optimization", "Local scripts"],
     "defaultPrompt": [

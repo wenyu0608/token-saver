@@ -15,7 +15,7 @@ All skills require explicit invocation. Installing the plugin does not add them 
 ## Install
 
 ```bash
-codex plugin marketplace add cocolwy/token-saver --ref main
+codex plugin marketplace add wenyu0608/token-saver --ref main
 codex plugin add token-saver@token-saver
 ```
 

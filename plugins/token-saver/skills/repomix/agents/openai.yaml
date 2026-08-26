@@ -1,0 +1,6 @@
+interface:
+  display_name: "Repomix Context"
+  short_description: "Build a token-efficient repository map on demand"
+  default_prompt: "Use $repomix to map this repository before working on my request."
+policy:
+  allow_implicit_invocation: false

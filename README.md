@@ -4,6 +4,8 @@ An umbrella router for reducing avoidable coding-agent context without hiding th
 
 Token Saver selects a focused workflow for each task, explains the choice naturally, and ends with an honest `exact`, `estimated`, or `observed-only` token receipt.
 
+Short questions take a Fast Pass: Token Saver skips its Router, Receipt rules, and specialist skills when their overhead would exceed any likely saving.
+
 ## Skills
 
 - `$token-saver` automatically routes the task and produces a token receipt.
@@ -82,6 +84,13 @@ Repository figures are Repomix token counts from DreamZero commit `ab790c1`; the
 Token Saver optimizes context before it reaches the model. It favors selection over lossy compression, keeps raw diagnostic output locally retrievable, and never edits user configuration without permission.
 
 Status lines use a compact branded form such as `⚡ Token Saver｜Docs Slice：只读关键段落`. Receipts quantify exact or estimated attributable savings; small or unmeasured tasks report conservative observable values instead of `unavailable`.
+
+For a short question, the expected output is deliberately smaller:
+
+```text
+⚡ Token Saver｜Fast Pass：轻任务，跳过优化器
+Token Saver 账单｜本轮未启用压缩｜入口开销约 250 tokens
+```
 
 See [the MVP contract](docs/MVP.md) for routing, measurement levels, and the baseline model.
 

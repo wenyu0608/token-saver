@@ -1,16 +1,13 @@
 ---
 name: token-saver
-description: Route coding-agent tasks through the smallest suitable context-saving workflow, report what was enabled in natural language, and produce an honest token receipt. Use when the user asks to save tokens, reduce context, or invokes Token Saver; do not claim exact savings without a measured baseline.
+description: Save context for repositories, noisy output, long documents, or session history. Fast-pass short questions when optimization costs more than it saves.
 ---
 
 # Token Saver
 
-Select context before it reaches the model, then report the result without interrupting the task.
+Decide first without reading any reference:
 
-1. Classify the task and enable only the relevant methods from [the router](references/router.md). Combine methods only when each removes a distinct source of context.
-2. Put one short branded status line before the answer: `⚡ Token Saver｜<method>：<plain-language benefit>`. Keep the benefit specific and under one clause, for example `⚡ Token Saver｜Diff Context：只追改动相关代码` or `🧭 Token Saver｜Repomix：先画地图，再读源码`.
-3. Perform the user's task using the selected workflow. Keep raw evidence locally retrievable when filtering tool output.
-4. Append a compact receipt using [the receipt rules](references/receipt.md). Prefer an exact or estimated attributable saving. When no baseline exists, quantify observable context or report `轻量任务，额外压缩≈0`; do not expose the internal word `unavailable` to the user.
-5. Format the substantive answer for quick scanning: lead with the action or conclusion, number multi-step instructions, and keep ordinary lists to five items or fewer.
+- **Fast Pass:** If the prompt and current short context are enough, do not read references or child skills. Answer normally with `⚡ Token Saver｜Fast Pass：轻任务，跳过优化器` and end with `Token Saver 账单｜本轮未启用压缩｜入口开销约 250 tokens`.
+- **Optimize:** If work requires a repository, diff, noisy command, long document, or long-session handoff, read [the router](references/router.md), use only the selected method, then read [the receipt rules](references/receipt.md) after comparable artifacts exist.
 
-The receipt is secondary to task success. If compression hides required evidence, retrieve the original context and record the fallback as optimizer overhead.
+Never load Router or Receipt merely to answer a savings question about a short task. Never claim access to hidden harness usage. Lead with the result; number multi-step work; keep lists to five items.

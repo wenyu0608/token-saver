@@ -2,6 +2,8 @@
 
 Choose from observable task signals. Do not load every child skill merely because it is installed.
 
+This reference is the heavy-task path. If no large context candidate will be opened, return to `Fast Pass` without loading a child skill.
+
 | Signal | Method | Initial context |
 | --- | --- | --- |
 | Changed code, PR, regression | `diff-context` | Status, diff stat, bounded hunks, direct dependencies |

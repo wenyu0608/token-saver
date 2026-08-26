@@ -51,6 +51,16 @@ The resulting explanation followed one evidence trail:
 3. `action_head/wan_flow_matching_action_tf.py` coordinates joint denoising, action sampling, and persistent KV caches.
 4. `modules/wan_video_dit_action_casual_chunk.py` inserts state/action tokens into the causal DiT and decodes video and action predictions separately.
 
+### Example answer
+
+> DreamZero turns a pretrained video diffusion model into a robot policy by learning video and action in one causal World Action Model. Visual observations are encoded by a VAE, language by a text encoder, and proprioceptive state by a state encoder. The causal DiT processes video, state, and noisy action tokens together; a video head predicts future frames while an action decoder predicts the corresponding action chunk.
+>
+> Training uses a shared flow-matching objective for video and action instead of training an independent video predictor and inverse-dynamics model. This tight coupling encourages the action prediction to inherit the video backbone's physical and semantic priors, which is the paper's explanation for stronger zero-shot behavior.
+>
+> During inference, DreamZero generates fixed-size chunks autoregressively. It retains past context in a KV cache, executes predicted actions asynchronously, and replaces predicted visual history with the next real observation. That closed loop limits accumulated video-prediction error while preserving long temporal context.
+>
+> Start reading the implementation at `base_vla.py`, then follow `joint_video_action` into `wan_flow_matching_action_tf.py`. The shared causal transformer, state/action encoders, action decoder, and KV-cache updates live in `wan_video_dit_action_casual_chunk.py`.
+
 ### Measured context funnel
 
 | Context candidate | Tokens |

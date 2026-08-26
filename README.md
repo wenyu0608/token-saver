@@ -31,6 +31,15 @@ Restart Codex, then invoke a skill such as:
 $token-saver diagnose the failing test without dumping the full build log
 ```
 
+### Update
+
+Git marketplace installs are cached and do not update live. Refresh the marketplace, reinstall the plugin, then start a new Codex task:
+
+```bash
+codex plugin marketplace upgrade token-saver
+codex plugin add token-saver@token-saver
+```
+
 ## Real-world example: understand DreamZero
 
 We asked Token Saver to connect the [DreamZero paper](https://arxiv.org/abs/2602.15922) to its [official implementation](https://github.com/dreamzero0/dreamzero):
@@ -85,11 +94,10 @@ Token Saver optimizes context before it reaches the model. It favors selection o
 
 Status lines use a compact branded form such as `⚡ Token Saver｜Docs Slice：只读关键段落`. Receipts quantify exact or estimated attributable savings; small or unmeasured tasks report conservative observable values instead of `unavailable`.
 
-For a short question, the expected output is deliberately smaller:
+For a short question, Token Saver stays out of the answer and adds only one reminder:
 
 ```text
-⚡ Token Saver｜Fast Pass：轻任务，跳过优化器
-Token Saver 账单｜本轮未启用压缩｜入口开销约 250 tokens
+提示：这是简单任务，下次无需启用 Token Saver。
 ```
 
 See [the MVP contract](docs/MVP.md) for routing, measurement levels, and the baseline model.

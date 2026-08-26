@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "token-saver",
   "displayName": "Token Saver",
-  "version": "0.3.3-alpha.2",
+  "version": "0.3.3-alpha.3",
   "description": "Save AI coding tokens without losing the critical context needed for correct answers.",
   "author": {
     "name": "wenyu0608",

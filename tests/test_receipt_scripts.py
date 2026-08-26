@@ -49,6 +49,33 @@ class ReceiptScriptsTest(unittest.TestCase):
         )
         self.assertEqual(json.loads(completed.stdout)["measurement"], "observed-only")
 
+    def test_missing_baseline_uses_canonical_footer(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, SCRIPTS / "estimate_receipt.py", "--method", "docs-slice"],
+            check=True, capture_output=True, text=True,
+        )
+        self.assertEqual(
+            completed.stdout.strip(),
+            "Token Saver 账单｜已处理约 0 tokens｜未记录可比基线，不估算节省",
+        )
+
+    def test_estimated_footer_reports_net_saving(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp = Path(temp_dir)
+            baseline = temp / "baseline.txt"
+            optimized = temp / "optimized.txt"
+            baseline.write_text("a" * 4000, encoding="utf-8")
+            optimized.write_text("b" * 400, encoding="utf-8")
+            completed = subprocess.run(
+                [sys.executable, SCRIPTS / "estimate_receipt.py", "--method", "docs-slice",
+                 "--baseline", baseline, "--optimized", optimized],
+                check=True, capture_output=True, text=True,
+            )
+            self.assertEqual(
+                completed.stdout.strip(),
+                "Token Saver 账单｜文本候选约 1,000 → 100 tokens｜估算净节省约 900（90.0%）",
+            )
+
     def test_full_fidelity_only_claims_navigation_savings(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             temp = Path(temp_dir)

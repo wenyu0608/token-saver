@@ -56,6 +56,18 @@ class PluginManifestTest(unittest.TestCase):
         self.assertIn("COPILOT_PLUGIN_DATA", wrapper)
         self.assertIn("PLUGIN_DATA", wrapper)
 
+    def test_output_contract_is_reachable_from_umbrella_skill(self):
+        skill = (PLUGIN / "skills" / "token-saver" / "SKILL.md").read_text(
+            encoding="utf-8"
+        )
+        contract = (
+            PLUGIN / "skills" / "token-saver" / "references" / "output-contract.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertIn("references/output-contract.md", skill)
+        self.assertIn("Fast Pass has no branded opening and no receipt", contract)
+        self.assertIn("Never print `unavailable`", contract)
+
 
 if __name__ == "__main__":
     unittest.main()

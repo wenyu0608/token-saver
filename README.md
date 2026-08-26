@@ -139,7 +139,7 @@ The resulting explanation followed one evidence trail:
 | Relevant paper pages 6–7, estimated | 2,243 |
 
 ```text
-Token Saver 账单｜候选上下文 379,765 → 57,098｜估算省下 322,667 tokens（85.0%）
+Token Saver 账单｜候选上下文约 379,765 → 57,098 tokens｜估算净节省约 322,667（85.0%）
 ```
 
 Repository figures are Repomix token counts from DreamZero commit `ab790c1`; the focused scope contains `groot/vla/model/dreamzero/**`, its model configuration, and `README.md`. PDF figures use `ceil(UTF-8 bytes / 4)`, so the combined receipt is labeled as an estimate. The optimized number is a context candidate, not a claim that every token was sent to a model.
@@ -148,7 +148,7 @@ For mixed documents, Token Saver captures a lightweight inventory before slicing
 pages separate from text estimates:
 
 ```text
-Token Saver 账单｜文本候选与筛选后上下文分开计量｜图表按页数独立报告
+Token Saver 账单｜文本候选约 X → Y tokens｜图表 A → B 页
 ```
 
 This inventory is metadata, not a second model request. It prevents the common “processed some
@@ -159,15 +159,15 @@ other omission-sensitive work, Token Saver switches to **Full Fidelity**. It ret
 in-scope evidence and compresses only navigation, duplication, and presentation:
 
 ```text
-🔍 Token Saver 进入精查模式：本轮保留完整证据，仅压缩导航与重复内容。
-Token Saver 账单｜完整证据已保留｜仅统计导航与重复内容的节省
+🔍 Token Saver｜Full Fidelity：保留完整证据，仅压缩导航与重复内容
+Token Saver 账单｜完整证据已保留｜本轮不主张 token 节省
 ```
 
 ## Design
 
 Token Saver optimizes context before it reaches the model. It favors selection over lossy compression, keeps raw diagnostic output locally retrievable, and never edits user configuration without permission.
 
-Status lines use a compact branded form such as `⚡ Token Saver｜Docs Slice：只读关键段落`. Receipts quantify exact or estimated attributable savings; small or unmeasured tasks report conservative observable values instead of `unavailable`.
+Routed status lines use the fixed form `⚡ Token Saver｜Docs Slice：只读关键段落`. Receipts use one canonical final-line template for exact, estimated, observed-only, or Full Fidelity results. Small tasks display neither line.
 
 For a short question, Token Saver stays out of the answer and adds only one reminder:
 

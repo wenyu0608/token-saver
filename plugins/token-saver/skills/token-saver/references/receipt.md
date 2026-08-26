@@ -43,17 +43,39 @@ Token Saver 账单｜完整证据已保留｜导航上下文约 X → Y tokens
 
 If no separable navigation baseline exists, say `完整证据已保留｜本轮不主张 token 节省`.
 
-Preferred compact footer:
+Use exactly one of the following final-line forms. Do not invent variants.
+
+Exact comparable measurement:
 
 ```text
-Token Saver 账单｜估算省下 8,633 tokens（66.4%）
+Token Saver 账单｜候选上下文 X → Y input tokens｜净节省 Z（P%）
 ```
 
-When there is no baseline, do not display `unavailable`. Use the most informative honest form:
+Estimated comparable measurement:
 
 ```text
-Token Saver 账单｜已处理约 1.2K tokens｜可归因节省 0（未记录压缩前候选内容）
-Token Saver 账单｜轻量任务，额外压缩≈0 tokens
+Token Saver 账单｜候选上下文约 X → Y tokens｜估算净节省约 Z（P%）
 ```
 
-`0` is a conservative attributable value, not a claim that the workflow had no indirect benefit. Use `scripts/estimate_receipt.py` when baseline and optimized local artifacts or manifests are available. Mention cost separately when cached-token and model-pricing data are available; token reduction and bill reduction are not interchangeable.
+Observed-only measurement when no comparable baseline exists:
+
+```text
+Token Saver 账单｜已处理约 Y tokens｜未记录可比基线，不估算节省
+```
+
+Comparable measurement with zero or negative net savings:
+
+```text
+Token Saver 账单｜已处理约 Y tokens｜未产生可报告的净节省
+```
+
+Full Fidelity without a separable navigation baseline:
+
+```text
+Token Saver 账单｜完整证据已保留｜本轮不主张 token 节省
+```
+
+Do not display `unavailable`, `可归因节省 0`, a negative number, or a marketing estimate. Fast Pass
+uses no receipt at all. Use `scripts/estimate_receipt.py` when baseline and optimized local artifacts
+or manifests are available. Mention cost separately when cached-token and model-pricing data are
+available; token reduction and bill reduction are not interchangeable.

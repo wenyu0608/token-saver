@@ -101,7 +101,7 @@ def main() -> int:
         else:
             print(
                 f"Token Saver 账单｜已处理约 {optimized:,} tokens｜"
-                "可归因节省 0（未记录压缩前候选内容）"
+                "未记录可比基线，不估算节省"
             )
     else:
         prefix = "Token Saver 账单｜"
@@ -109,9 +109,16 @@ def main() -> int:
             prefix += "完整证据已保留｜导航上下文约 "
         else:
             prefix += "文本候选约 "
+        net_saved = result["net_saved_tokens"]
+        if net_saved <= 0:
+            print(
+                f"Token Saver 账单｜已处理约 {optimized:,} tokens｜"
+                "未产生可报告的净节省"
+            )
+            return 0
         parts = [
-            f"{prefix}{baseline:,} → {optimized:,} tokens "
-            f"(↓{result['saved_percent']}%)"
+            f"{prefix}{baseline:,} → {optimized:,} tokens｜"
+            f"估算净节省约 {net_saved:,}（{result['saved_percent']}%）"
         ]
         if baseline_images or optimized_images:
             parts.append(

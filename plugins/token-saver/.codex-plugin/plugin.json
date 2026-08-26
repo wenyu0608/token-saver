@@ -1,13 +1,13 @@
 {
   "name": "token-saver",
-  "version": "0.3.2-alpha.4+codex.20260826094441",
+  "version": "0.3.2-alpha.4+codex.20260826095146",
   "description": "Cut AI coding token waste without hiding the evidence that keeps answers correct.",
   "author": {
     "name": "wenyu0608",
     "url": "https://github.com/wenyu0608"
   },
   "repository": "https://github.com/wenyu0608/token-saver",
-  "homepage": "https://github.com/wenyu0608/token-saver#readme",
+  "homepage": "https://wenyu0608.github.io/token-saver/",
   "license": "MIT",
   "keywords": [
     "codex",

@@ -2,6 +2,8 @@
 
 **Save AI tokens without losing the context that keeps answers correct.**
 
+[Website](https://wenyu0608.github.io/token-saver/) · [Latest release](https://github.com/wenyu0608/token-saver/releases/tag/v0.3.2-alpha.4)
+
 Token Saver gives coding agents a budget brain: it skips overhead on simple tasks, focuses large repositories, documents, and logs, and preserves full evidence when correctness matters.
 
 Token Saver selects a focused workflow for each task, explains the choice naturally, and ends with an honest `exact`, `estimated`, or `observed-only` token receipt.

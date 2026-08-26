@@ -1,6 +1,8 @@
 # Token Saver
 
-An umbrella router for reducing avoidable coding-agent context without hiding the evidence needed to do the work.
+**Save AI tokens without losing the context that keeps answers correct.**
+
+Token Saver gives coding agents a budget brain: it skips overhead on simple tasks, focuses large repositories, documents, and logs, and preserves full evidence when correctness matters.
 
 Token Saver selects a focused workflow for each task, explains the choice naturally, and ends with an honest `exact`, `estimated`, or `observed-only` token receipt.
 

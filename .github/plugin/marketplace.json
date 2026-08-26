@@ -1,8 +1,9 @@
 {
   "name": "token-saver",
-  "description": "Cross-harness context routing and token-efficiency skills for coding agents.",
-  "owner": {
-    "name": "wenyu0608"
+  "owner": {"name": "wenyu0608"},
+  "metadata": {
+    "description": "Token-efficient context routing for coding agents.",
+    "version": "0.3.3-alpha.2"
   },
   "plugins": [
     {
@@ -10,19 +11,12 @@
       "source": "./plugins/token-saver",
       "description": "Save AI coding tokens without losing the critical context needed for correct answers.",
       "version": "0.3.3-alpha.2",
-      "author": {
-        "name": "wenyu0608",
-        "url": "https://github.com/wenyu0608"
-      },
+      "author": {"name": "wenyu0608", "url": "https://github.com/wenyu0608"},
       "homepage": "https://wenyu0608.github.io/token-saver/",
       "repository": "https://github.com/wenyu0608/token-saver",
       "license": "MIT",
       "category": "Productivity",
-      "tags": [
-        "token-efficiency",
-        "context-engineering",
-        "coding-agents"
-      ]
+      "tags": ["token-efficiency", "context-engineering", "coding-agents"]
     }
   ]
 }

@@ -19,7 +19,7 @@ if [[ "${TOKEN_SAVER_ALLOW_DOWNLOAD:-0}" != "1" ]]; then
   exit 69
 fi
 
-data_root="${CLAUDE_PLUGIN_DATA:-${PLUGIN_DATA:-${TMPDIR:-/tmp}/token-saver-data}}"
+data_root="${COPILOT_PLUGIN_DATA:-${CLAUDE_PLUGIN_DATA:-${PLUGIN_DATA:-${TMPDIR:-/tmp}/token-saver-data}}}"
 cache_root="${data_root}/npm-cache"
 mkdir -p "$cache_root"
 export npm_config_cache="$cache_root"

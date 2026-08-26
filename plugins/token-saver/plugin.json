@@ -1,9 +1,8 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "token-saver",
-  "displayName": "Token Saver",
-  "version": "0.3.3-alpha.2",
   "description": "Save AI coding tokens without losing the critical context needed for correct answers.",
+  "version": "0.3.3-alpha.2",
   "author": {
     "name": "wenyu0608",
     "url": "https://github.com/wenyu0608"
@@ -11,11 +10,6 @@
   "homepage": "https://wenyu0608.github.io/token-saver/",
   "repository": "https://github.com/wenyu0608/token-saver",
   "license": "MIT",
-  "keywords": [
-    "claude-code",
-    "skills",
-    "token-efficiency",
-    "context-engineering"
-  ],
+  "keywords": ["agent-skills", "token-efficiency", "context-engineering", "coding-agents"],
   "skills": "./skills/"
 }

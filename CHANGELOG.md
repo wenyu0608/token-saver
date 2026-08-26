@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.3.3-alpha.2 - 2026-08-26
+
+### Added
+
+- Portable Agent Plugins manifest shared by Cursor and GitHub Copilot CLI.
+- Cursor marketplace catalog and immediate Remote Rule installation guide.
+- GitHub Copilot marketplace catalog plus install and update instructions.
+- Skill-local Repomix launcher that avoids host-specific plugin-root variables.
+
+### Changed
+
+- Repomix persistent data also recognizes GitHub Copilot's plugin data variable.
+- Public documentation now presents Codex, Claude Code, Cursor, and Copilot as
+  adapters over one shared Agent Skills core.
+
 ## v0.3.3-alpha.1 - 2026-08-26
 
 ### Added

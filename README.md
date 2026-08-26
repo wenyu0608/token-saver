@@ -4,7 +4,7 @@
 
 [Website](https://wenyu0608.github.io/token-saver/) · [Latest release](https://github.com/wenyu0608/token-saver/releases/tag/v0.3.2-alpha.5)
 
-Token Saver gives coding agents a budget brain: it skips overhead on simple tasks, focuses large repositories, documents, and logs, and preserves full evidence when correctness matters.
+Token Saver gives coding agents a budget brain: it skips overhead on simple tasks, focuses large repositories, documents, and logs, and preserves full evidence when correctness matters. One shared Agent Skills core supports Codex, Claude Code, Cursor, and GitHub Copilot.
 
 ![Token Saver routes a repository task through focused context](docs/assets/token-saver-demo.gif)
 
@@ -57,6 +57,27 @@ Then invoke the namespaced skill:
 
 See the [Claude Code adapter guide](docs/CLAUDE_CODE.md) for specialist commands,
 updates, and local validation.
+
+### Cursor
+
+Add this GitHub plugin directory as a Remote Rule:
+
+```text
+https://github.com/wenyu0608/token-saver/tree/main/plugins/token-saver
+```
+
+Then invoke `/token-saver`. See the [Cursor adapter guide](docs/CURSOR.md) for
+local plugin testing and marketplace distribution.
+
+### GitHub Copilot CLI
+
+```bash
+copilot plugin marketplace add wenyu0608/token-saver
+copilot plugin install token-saver@token-saver
+```
+
+Invoke `/token-saver` in a new session. See the
+[GitHub Copilot adapter guide](docs/GITHUB_COPILOT.md).
 
 ### Update Codex
 

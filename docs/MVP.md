@@ -22,7 +22,7 @@ The free plugin supplies routing, local optimizers, and local estimates. A futur
 
 1. Route repository, changed-code, noisy-command, documentation, and long-session tasks without loading unrelated workflows.
 2. Every invocation begins with a natural one-line disclosure of the enabled method and reason.
-3. Every invocation ends with an `exact`, `estimated`, or `unavailable` receipt.
+3. Every invocation ends with an `exact`, `estimated`, or `observed-only` receipt; user-facing copy never exposes a bare “unavailable” state.
 4. Filtered source material remains locally retrievable, and a failed compression can fall back to the original.
 5. Benchmarks compare task success as well as net input tokens.
 

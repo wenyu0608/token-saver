@@ -10,8 +10,8 @@ Use Repomix as a discovery layer, not as the source to edit.
 ## Workflow
 
 1. Resolve the repository root and the narrowest useful scope from the user's request. Prefer a relevant directory such as `src/` over the entire repository when possible.
-2. Confirm `repomix` is available. If it is missing, report that fact and give the install command; do not silently substitute a network-based runner.
-3. Create a temporary directory with `mktemp -d`. Run Repomix from the repository root with `--compress` and an explicit output path inside that temporary directory. Respect existing ignore files and add `--include` or `--ignore` only when the task provides a clear boundary.
+2. Invoke `${PLUGIN_ROOT}/scripts/run-repomix.sh`. It prefers an existing local CLI; if none exists, request authorization for the wrapper's pinned one-time npm download. Never set `TOKEN_SAVER_ALLOW_DOWNLOAD=1` without that authorization.
+3. Create a temporary directory with `mktemp -d`. Run the wrapper from the repository root with `--compress` and an explicit output path inside that temporary directory. Respect existing ignore files and add `--include` or `--ignore` only when the task provides a clear boundary.
 4. Read the compressed output to identify entry points, dependencies, and the smallest set of relevant original files. If the output is still very large, narrow the scope before reading it in full.
 5. Continue the user's task using original source files. Never edit, commit, or treat the Repomix output as authoritative source code.
 

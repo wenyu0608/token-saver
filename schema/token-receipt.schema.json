@@ -4,7 +4,7 @@
   "title": "Token Saver Receipt",
   "type": "object",
   "additionalProperties": false,
-  "required": ["version", "methods", "measurement", "baseline_input_tokens", "optimized_input_tokens", "optimizer_overhead_tokens", "net_saved_tokens", "reason"],
+  "required": ["version", "methods", "measurement", "reason"],
   "properties": {
     "version": { "const": "1.0" },
     "methods": {
@@ -13,20 +13,23 @@
       "uniqueItems": true,
       "items": { "type": "string", "pattern": "^[a-z0-9-]+$" }
     },
-    "measurement": { "enum": ["exact", "estimated", "unavailable"] },
+    "measurement": { "enum": ["exact", "estimated", "observed-only"] },
     "baseline_input_tokens": { "type": ["integer", "null"], "minimum": 0 },
     "optimized_input_tokens": { "type": ["integer", "null"], "minimum": 0 },
     "optimizer_overhead_tokens": { "type": ["integer", "null"], "minimum": 0 },
     "net_saved_tokens": { "type": ["integer", "null"] },
     "saved_percent": { "type": ["number", "null"] },
     "cached_tokens_affected": { "type": ["integer", "null"], "minimum": 0 },
+    "observable_input_tokens": { "type": ["integer", "null"], "minimum": 0 },
+    "attributable_saved_tokens": { "type": ["integer", "null"], "minimum": 0 },
     "reason": { "type": "string", "minLength": 1 },
     "quality_fallback_used": { "type": "boolean", "default": false }
   },
   "allOf": [
     {
-      "if": { "properties": { "measurement": { "const": "unavailable" } } },
+      "if": { "properties": { "measurement": { "const": "observed-only" } } },
       "then": {
+        "required": ["observable_input_tokens", "attributable_saved_tokens"],
         "properties": {
           "baseline_input_tokens": { "type": "null" },
           "net_saved_tokens": { "type": "null" }

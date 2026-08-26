@@ -11,7 +11,7 @@ Choose from observable task signals. Do not load every child skill merely becaus
 | Long session about to continue elsewhere | `session-handoff` | Verified 500–1,500 token brief |
 | Context-cost investigation | `token-audit` | Observable instructions and injected artifacts |
 
-The Repomix skill is bundled, while the `repomix` CLI remains an external runtime dependency. For an unfamiliar repository, prefer a repo map over dumping all source files. If the CLI is unavailable, use `rg --files`, targeted symbol search, and bounded reads; state the fallback rather than installing software without authorization.
+The Repomix skill and pinned wrapper are bundled. The wrapper prefers a compatible local CLI and can retrieve its pinned npm runtime only after explicit authorization. For an unfamiliar repository, prefer a repo map over dumping all source files. If neither a local CLI nor an authorized download is available, use `rg --files`, targeted symbol search, and bounded reads.
 
 Common combinations:
 

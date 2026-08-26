@@ -1,12 +1,12 @@
 # Token Receipt
 
-Use one of three measurement levels:
+Use one of three measurement levels internally:
 
 | Level | Requirement | Wording |
 | --- | --- | --- |
 | `exact` | Both baseline and optimized payload were tokenized with the target model's tokenizer, or the harness exposed equivalent counts | `净节省 8,633 input tokens（66.4%）` |
 | `estimated` | Both payloads are available but only a documented approximation is possible | `估算净节省约 8.6K input tokens` |
-| `unavailable` | No comparable baseline exists | `净节省：暂不可测（缺少同任务的未优化基线）` |
+| `observed-only` | No comparable baseline exists | Report observable volume and a conservative attributable saving |
 
 Calculate:
 
@@ -21,7 +21,14 @@ The baseline is a locally constructed payload representing the context that the 
 Preferred compact footer:
 
 ```text
-Token Saver｜方法：diff-context + errors-only｜净节省：8,633 input tokens（exact）
+Token Saver 账单｜估算省下 8,633 tokens（66.4%）
 ```
 
-When unavailable, say why in the same line. Mention cost separately when cached-token and model-pricing data are available; token reduction and bill reduction are not interchangeable.
+When there is no baseline, do not display `unavailable`. Use the most informative honest form:
+
+```text
+Token Saver 账单｜已处理约 1.2K tokens｜可归因节省 0（未记录压缩前候选内容）
+Token Saver 账单｜轻量任务，额外压缩≈0 tokens
+```
+
+`0` is a conservative attributable value, not a claim that the workflow had no indirect benefit. Use `scripts/estimate_receipt.py` when baseline and optimized local artifacts are available. Mention cost separately when cached-token and model-pricing data are available; token reduction and bill reduction are not interchangeable.

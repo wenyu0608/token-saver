@@ -98,6 +98,15 @@ Token Saver 账单｜文本候选约 46,500 → 3,800 tokens (↓91.8%)｜图表
 This inventory is metadata, not a second model request. It prevents the common “processed some
 characters, but no comparable baseline” receipt when the original document scope is observable.
 
+For exhaustive debugging, security-sensitive checks, migrations, concurrency, flaky tests, and
+other omission-sensitive work, Token Saver switches to **Full Fidelity**. It retains complete
+in-scope evidence and compresses only navigation, duplication, and presentation:
+
+```text
+🔍 Token Saver 进入精查模式：本轮保留完整证据，仅压缩导航与重复内容。
+Token Saver 账单｜完整证据已保留｜导航上下文约 8,200 → 1,400 tokens（↓82.9%）
+```
+
 ## Design
 
 Token Saver optimizes context before it reaches the model. It favors selection over lossy compression, keeps raw diagnostic output locally retrievable, and never edits user configuration without permission.

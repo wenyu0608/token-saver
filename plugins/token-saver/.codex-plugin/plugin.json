@@ -1,6 +1,6 @@
 {
   "name": "token-saver",
-  "version": "0.3.2-alpha.2",
+  "version": "0.3.2-alpha.3",
   "description": "Route tasks through focused workflows and report auditable token savings.",
   "author": {
     "name": "wenyu0608",
@@ -14,14 +14,15 @@
   "interface": {
     "displayName": "Token Saver",
     "shortDescription": "Route tasks through efficient context workflows.",
-    "longDescription": "Automatically choose Repomix, focused diff, command, documentation, session, and audit workflows, capture a pre-filter baseline, then report an honest token receipt.",
+    "longDescription": "Automatically choose focused or full-fidelity workflows, capture a pre-filter baseline, preserve high-risk evidence, then report an honest token receipt.",
     "developerName": "wenyu0608",
     "category": "Productivity",
-    "capabilities": ["Context routing", "Context optimization", "Token receipts", "Local scripts"],
+    "capabilities": ["Context routing", "Context optimization", "Full-fidelity review", "Token receipts", "Local scripts"],
     "defaultPrompt": [
       "Use $token-saver to choose the smallest useful context workflow for this task.",
       "Use $token-audit to find avoidable context costs.",
-      "Use $errors-only to run tests without dumping logs."
+      "Use $errors-only to run tests without dumping logs.",
+      "Use $full-fidelity when this review must not omit unique evidence."
     ]
   }
 }

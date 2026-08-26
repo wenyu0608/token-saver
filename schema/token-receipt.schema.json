@@ -23,6 +23,8 @@
     "optimized_image_pages": { "type": ["integer", "null"], "minimum": 0 },
     "image_pages_saved": { "type": ["integer", "null"] },
     "image_pages_saved_percent": { "type": ["number", "null"] },
+    "fidelity_mode": { "enum": ["focused", "full"] },
+    "evidence_retained": { "type": "boolean" },
     "cached_tokens_affected": { "type": ["integer", "null"], "minimum": 0 },
     "observable_input_tokens": { "type": ["integer", "null"], "minimum": 0 },
     "attributable_saved_tokens": { "type": ["integer", "null"], "minimum": 0 },

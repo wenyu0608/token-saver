@@ -42,6 +42,7 @@ def main() -> int:
     parser.add_argument("--baseline-manifest")
     parser.add_argument("--optimized-manifest")
     parser.add_argument("--overhead-tokens", type=int, default=0)
+    parser.add_argument("--fidelity-mode", choices=("focused", "full"), default="focused")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
@@ -68,6 +69,8 @@ def main() -> int:
             "observable_input_tokens": optimized,
             "attributable_saved_tokens": 0,
             "reason": "No comparable pre-filter baseline was captured.",
+            "fidelity_mode": args.fidelity_mode,
+            "evidence_retained": args.fidelity_mode == "full",
         }
     else:
         saved = baseline - optimized - args.overhead_tokens
@@ -86,18 +89,28 @@ def main() -> int:
             "image_pages_saved": image_pages_saved,
             "image_pages_saved_percent": percent(image_pages_saved, baseline_images),
             "reason": "Text estimated with ceil(total bytes / 4); image pages reported separately.",
+            "fidelity_mode": args.fidelity_mode,
+            "evidence_retained": args.fidelity_mode == "full",
         }
 
     if args.json:
         print(json.dumps(result, ensure_ascii=False, indent=2))
     elif result["measurement"] == "observed-only":
-        print(
-            f"Token Saver 账单｜已处理约 {optimized:,} tokens｜"
-            "可归因节省 0（未记录压缩前候选内容）"
-        )
+        if args.fidelity_mode == "full":
+            print("Token Saver 账单｜完整证据已保留｜本轮不主张 token 节省")
+        else:
+            print(
+                f"Token Saver 账单｜已处理约 {optimized:,} tokens｜"
+                "可归因节省 0（未记录压缩前候选内容）"
+            )
     else:
+        prefix = "Token Saver 账单｜"
+        if args.fidelity_mode == "full":
+            prefix += "完整证据已保留｜导航上下文约 "
+        else:
+            prefix += "文本候选约 "
         parts = [
-            f"Token Saver 账单｜文本候选约 {baseline:,} → {optimized:,} tokens "
+            f"{prefix}{baseline:,} → {optimized:,} tokens "
             f"(↓{result['saved_percent']}%)"
         ]
         if baseline_images or optimized_images:

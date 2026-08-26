@@ -49,6 +49,32 @@ class ReceiptScriptsTest(unittest.TestCase):
         )
         self.assertEqual(json.loads(completed.stdout)["measurement"], "observed-only")
 
+    def test_full_fidelity_only_claims_navigation_savings(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp = Path(temp_dir)
+            baseline = temp / "baseline.txt"
+            optimized = temp / "optimized.txt"
+            baseline.write_text("n" * 4000, encoding="utf-8")
+            optimized.write_text("i" * 400, encoding="utf-8")
+            completed = subprocess.run(
+                [sys.executable, SCRIPTS / "estimate_receipt.py", "--method", "full-fidelity",
+                 "--baseline", baseline, "--optimized", optimized, "--fidelity-mode", "full"],
+                check=True, capture_output=True, text=True,
+            )
+            self.assertIn("完整证据已保留", completed.stdout)
+            self.assertIn("导航上下文约 1,000 → 100 tokens", completed.stdout)
+
+    def test_full_fidelity_without_baseline_makes_no_savings_claim(self) -> None:
+        completed = subprocess.run(
+            [sys.executable, SCRIPTS / "estimate_receipt.py", "--method", "full-fidelity",
+             "--fidelity-mode", "full"],
+            check=True, capture_output=True, text=True,
+        )
+        self.assertEqual(
+            completed.stdout.strip(),
+            "Token Saver 账单｜完整证据已保留｜本轮不主张 token 节省",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

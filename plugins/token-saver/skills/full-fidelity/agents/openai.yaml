@@ -1,0 +1,6 @@
+interface:
+  display_name: "Full Fidelity"
+  short_description: "Preserve complete evidence for exact, high-risk reviews"
+  default_prompt: "Use $full-fidelity to inspect this task without omitting unique evidence."
+policy:
+  allow_implicit_invocation: false

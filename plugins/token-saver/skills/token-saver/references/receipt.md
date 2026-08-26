@@ -30,6 +30,15 @@ one invented number. Report the dimensions separately:
 Token Saver 账单｜文本候选约 46.5K → 3.8K tokens（↓91.8%）｜图表 12 → 3 页（↓75%）
 ```
 
+In `Full Fidelity`, savings may only be attributed to navigation, indexes, deduplication, or
+presentation. Never count preserved or fully inspected evidence as removed. Use wording such as:
+
+```text
+Token Saver 账单｜完整证据已保留｜导航上下文约 8.2K → 1.4K tokens（↓82.9%）
+```
+
+If no separable navigation baseline exists, say `完整证据已保留｜本轮不主张 token 节省`.
+
 Preferred compact footer:
 
 ```text

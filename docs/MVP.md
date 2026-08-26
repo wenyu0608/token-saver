@@ -25,6 +25,7 @@ The free plugin supplies routing, local optimizers, and local estimates. A futur
 3. Every invocation ends with an `exact`, `estimated`, or `observed-only` receipt; user-facing copy never exposes a bare “unavailable” state.
 4. Filtered source material remains locally retrievable, and a failed compression can fall back to the original.
 5. Benchmarks compare task success as well as net input tokens.
+6. Exact and high-risk work enters `Full Fidelity`: unique evidence remains in scope, and receipts only count navigation or deduplication savings.
 
 ## Baseline capture
 

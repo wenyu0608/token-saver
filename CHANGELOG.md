@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3.2-alpha.3 - 2026-08-26
+
+### Added
+
+- `Full Fidelity` mode for exhaustive debugging, verification, audits, and high-risk correctness work.
+- Automatic escalation gates for cross-boundary bugs, inconclusive filtered evidence, causal ordering or environment details, and explicit complete-review requests.
+- Coverage-aware receipts that only attribute savings to navigation, deduplication, and presentation while preserving complete evidence.
+
+### Changed
+
+- Fidelity requirements now override token reduction in the umbrella router.
+
 ## v0.3.2-alpha.2 - 2026-08-26
 
 ### Added

@@ -42,8 +42,9 @@ No duplicate model request is required. Exact measurement needs the actual seria
 
 The heavy-task path captures a lightweight inventory before filtering and a second inventory after
 filtering. Text is estimated independently from visual pages; image pages are never converted into
-text tokens. This lets mixed-document receipts report, for example, `text 46.5K → 3.8K tokens` and
-`charts 12 → 3 pages` without manufacturing a cross-modal total.
+text tokens. Mixed-document receipts report text and chart deltas separately without manufacturing
+a cross-modal total. Public examples use measured, reproducible values or placeholders—not invented
+performance percentages.
 
 ## Packaging sequence
 

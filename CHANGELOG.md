@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.3.2-alpha.4 - 2026-08-26
+
+### Changed
+
+- Removed synthetic token-reduction percentages from public examples.
+- Public receipts now use reproducible measurements or explicit placeholders.
+
 ## v0.3.2-alpha.3 - 2026-08-26
 
 ### Added

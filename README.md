@@ -92,7 +92,7 @@ For mixed documents, Token Saver captures a lightweight inventory before slicing
 pages separate from text estimates:
 
 ```text
-Token Saver 账单｜文本候选约 46,500 → 3,800 tokens (↓91.8%)｜图表 12 → 3 页 (↓75.0%)
+Token Saver 账单｜文本候选与筛选后上下文分开计量｜图表按页数独立报告
 ```
 
 This inventory is metadata, not a second model request. It prevents the common “processed some
@@ -104,7 +104,7 @@ in-scope evidence and compresses only navigation, duplication, and presentation:
 
 ```text
 🔍 Token Saver 进入精查模式：本轮保留完整证据，仅压缩导航与重复内容。
-Token Saver 账单｜完整证据已保留｜导航上下文约 8,200 → 1,400 tokens（↓82.9%）
+Token Saver 账单｜完整证据已保留｜仅统计导航与重复内容的节省
 ```
 
 ## Design

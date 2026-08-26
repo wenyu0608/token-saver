@@ -6,6 +6,8 @@
 
 Token Saver gives coding agents a budget brain: it skips overhead on simple tasks, focuses large repositories, documents, and logs, and preserves full evidence when correctness matters.
 
+![Token Saver routes a repository task through focused context](docs/assets/token-saver-demo.gif)
+
 Token Saver selects a focused workflow for each task, explains the choice naturally, and ends with an honest `exact`, `estimated`, or `observed-only` token receipt.
 
 Short questions take a Fast Pass: Token Saver skips its Router, Receipt rules, and specialist skills when their overhead would exceed any likely saving.

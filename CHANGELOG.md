@@ -1,0 +1,38 @@
+# Changelog
+
+## v0.3.2-alpha.1 - 2026-08-26
+
+First public alpha shaped by real user feedback.
+
+### Included
+
+- One umbrella `$token-saver` router plus Repomix, Diff Context, Errors Only, Docs Slice, Session Handoff, and Token Audit workflows.
+- Progressive loading: short questions take a silent Fast Pass; heavy tasks load only the selected optimizer and measurement rules.
+- Exact, estimated, and observed-only receipts with explicit measurement provenance.
+- A pinned Repomix wrapper that avoids global installation and isolates its npm cache in plugin data.
+- A measured DreamZero paper-and-code case study showing a candidate-context reduction from 379,765 to 57,098 tokens.
+
+### User-feedback fix
+
+The original umbrella workflow could load about 1,230 tokens of routing and receipt instructions for a one-line question. The Fast Pass entry now costs about 241 estimated tokens and skips child references, reducing fixed overhead by roughly 80%. Its user-facing response stays clean and only reminds the user that simple tasks do not need Token Saver.
+
+### Known limitations
+
+- Git marketplace installations do not update live; users must refresh the marketplace and reinstall the plugin.
+- Receipt accuracy depends on available artifacts because coding-agent harnesses do not always expose the final serialized model input.
+- The Repomix fallback requires Node.js/npm for its first approved, pinned download.
+- Windows and Linux clean-install coverage is still limited during alpha.
+
+### Install
+
+```bash
+codex plugin marketplace add wenyu0608/token-saver --ref main
+codex plugin add token-saver@token-saver
+```
+
+### Update
+
+```bash
+codex plugin marketplace upgrade token-saver
+codex plugin add token-saver@token-saver
+```

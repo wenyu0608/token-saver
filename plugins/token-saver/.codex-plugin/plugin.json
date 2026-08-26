@@ -1,6 +1,6 @@
 {
   "name": "token-saver",
-  "version": "0.3.2-alpha.4+codex.20260826095146",
+  "version": "0.3.2-alpha.5",
   "description": "Cut AI coding token waste without hiding the evidence that keeps answers correct.",
   "author": {
     "name": "wenyu0608",
@@ -22,6 +22,11 @@
     "longDescription": "Give coding agents a budget brain: skip overhead on simple tasks, compress large repositories, documents, and logs, preserve full evidence for sensitive debugging, and report auditable token savings.",
     "developerName": "wenyu0608",
     "category": "Productivity",
+    "websiteURL": "https://wenyu0608.github.io/token-saver/",
+    "brandColor": "#C7FF35",
+    "composerIcon": "./assets/wallet-icon.png",
+    "logo": "./assets/wallet-logo.png",
+    "logoDark": "./assets/wallet-logo-dark.png",
     "capabilities": [
       "Context routing",
       "Context optimization",
@@ -30,10 +35,9 @@
       "Local scripts"
     ],
     "defaultPrompt": [
-      "Use $token-saver to choose the smallest useful context workflow for this task.",
-      "Use $token-audit to find avoidable context costs.",
-      "Use $errors-only to run tests without dumping logs.",
-      "Use $full-fidelity when this review must not omit unique evidence."
+      "Use $token-saver to analyze this repository with the smallest safe context.",
+      "Use $token-audit to find avoidable token costs.",
+      "Use $errors-only to debug this command without dumping the full log."
     ]
   }
 }

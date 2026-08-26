@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.3.2-alpha.5 - 2026-08-26
+
+### Changed
+
+- Repositioned the marketplace listing around saving AI tokens without losing critical context.
+- Added a high-contrast wallet logo, composer icon, brand color, and public website link.
+- Tightened starter prompts to the three most useful first-run workflows.
+
 ## v0.3.2-alpha.4 - 2026-08-26
 
 ### Changed

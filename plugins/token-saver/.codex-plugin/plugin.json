@@ -1,7 +1,7 @@
 {
   "name": "token-saver",
-  "version": "0.1.0",
-  "description": "Five explicit workflows that reduce avoidable coding-agent context.",
+  "version": "0.2.0",
+  "description": "Route tasks through focused workflows and report auditable token savings.",
   "author": {
     "name": "wenyu0608",
     "url": "https://github.com/wenyu0608"
@@ -13,15 +13,15 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Token Saver",
-    "shortDescription": "Reduce noisy context before it reaches the model.",
-    "longDescription": "Audit context overhead, filter command failures, inspect focused diffs, create session handoffs, and retrieve narrow documentation slices.",
+    "shortDescription": "Route tasks through efficient context workflows.",
+    "longDescription": "Automatically choose focused repository, diff, command, documentation, session, and audit workflows, then report an honest token receipt.",
     "developerName": "wenyu0608",
     "category": "Productivity",
-    "capabilities": ["Context optimization", "Local scripts"],
+    "capabilities": ["Context routing", "Context optimization", "Token receipts", "Local scripts"],
     "defaultPrompt": [
+      "Use $token-saver to choose the smallest useful context workflow for this task.",
       "Use $token-audit to find avoidable context costs.",
-      "Use $errors-only to run tests without dumping logs.",
-      "Use $diff-context to review only changed code."
+      "Use $errors-only to run tests without dumping logs."
     ]
   }
 }

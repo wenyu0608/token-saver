@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "task_class": "changed-code",
+  "methods": ["diff-context", "errors-only"],
+  "disclosure": "本次已启用：Diff Context 定位改动，再用 Errors Only 收敛测试日志。",
+  "reason": "The task concerns an existing diff and a noisy test command."
+}

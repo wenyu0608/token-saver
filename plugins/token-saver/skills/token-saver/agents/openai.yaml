@@ -1,0 +1,6 @@
+interface:
+  display_name: "Token Saver"
+  short_description: "Route tasks through efficient context workflows"
+  default_prompt: "Use $token-saver to complete this task with the smallest useful context and an honest token receipt."
+policy:
+  allow_implicit_invocation: true

@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.3.2-alpha.2 - 2026-08-26
+
+### Added
+
+- Pre-filter candidate capture for text bytes, estimated text tokens, and visual page counts.
+- Mixed-content receipts that report text-token and image-page reductions independently.
+- Regression tests for baseline manifests and observed-only fallback behavior.
+
+### Changed
+
+- Heavy workflows now capture the candidate scope before filtering whenever it is locally observable.
+- Receipts no longer attempt to merge image pages into an invented text-token total.
+
 ## v0.3.2-alpha.1 - 2026-08-26
 
 First public alpha shaped by real user feedback.

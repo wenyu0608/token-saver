@@ -23,3 +23,11 @@ Common combinations:
 - Optimization review: `token-audit` followed by only the highest-impact applicable method.
 
 Do not route ordinary short questions through an optimizer when its instructions or tool schema would cost more context than it removes.
+
+## Before filtering
+
+Record the candidate scope without sending it to the model. For local material, run
+`scripts/capture_candidate.py --label baseline --text <path> [--image-pages N]` and retain the
+JSON result. After selecting or compressing content, capture the optimized scope the same way.
+Inventory collection may inspect file sizes and page counts, but must not duplicate the model
+request or read excluded content into the conversation.

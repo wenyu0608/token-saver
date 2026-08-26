@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["version", "methods", "measurement", "reason"],
   "properties": {
-    "version": { "const": "1.0" },
+    "version": { "enum": ["1.0", "1.1"] },
     "methods": {
       "type": "array",
       "minItems": 1,
@@ -19,6 +19,10 @@
     "optimizer_overhead_tokens": { "type": ["integer", "null"], "minimum": 0 },
     "net_saved_tokens": { "type": ["integer", "null"] },
     "saved_percent": { "type": ["number", "null"] },
+    "baseline_image_pages": { "type": ["integer", "null"], "minimum": 0 },
+    "optimized_image_pages": { "type": ["integer", "null"], "minimum": 0 },
+    "image_pages_saved": { "type": ["integer", "null"] },
+    "image_pages_saved_percent": { "type": ["number", "null"] },
     "cached_tokens_affected": { "type": ["integer", "null"], "minimum": 0 },
     "observable_input_tokens": { "type": ["integer", "null"], "minimum": 0 },
     "attributable_saved_tokens": { "type": ["integer", "null"], "minimum": 0 },

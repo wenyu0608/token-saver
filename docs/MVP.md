@@ -39,6 +39,11 @@ net saved                                  38,720
 
 No duplicate model request is required. Exact measurement needs the actual serialized payload and the target tokenizer. Until agent harnesses expose that payload consistently, label file- or byte-derived measurements as estimates.
 
+The heavy-task path captures a lightweight inventory before filtering and a second inventory after
+filtering. Text is estimated independently from visual pages; image pages are never converted into
+text tokens. This lets mixed-document receipts report, for example, `text 46.5K → 3.8K tokens` and
+`charts 12 → 3 pages` without manufacturing a cross-modal total.
+
 ## Packaging sequence
 
 1. Ship the Codex plugin from this repository.

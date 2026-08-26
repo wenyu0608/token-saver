@@ -88,6 +88,16 @@ Token Saver 账单｜候选上下文 379,765 → 57,098｜估算省下 322,667 t
 
 Repository figures are Repomix token counts from DreamZero commit `ab790c1`; the focused scope contains `groot/vla/model/dreamzero/**`, its model configuration, and `README.md`. PDF figures use `ceil(UTF-8 bytes / 4)`, so the combined receipt is labeled as an estimate. The optimized number is a context candidate, not a claim that every token was sent to a model.
 
+For mixed documents, Token Saver captures a lightweight inventory before slicing and keeps visual
+pages separate from text estimates:
+
+```text
+Token Saver 账单｜文本候选约 46,500 → 3,800 tokens (↓91.8%)｜图表 12 → 3 页 (↓75.0%)
+```
+
+This inventory is metadata, not a second model request. It prevents the common “processed some
+characters, but no comparable baseline” receipt when the original document scope is observable.
+
 ## Design
 
 Token Saver optimizes context before it reaches the model. It favors selection over lossy compression, keeps raw diagnostic output locally retrievable, and never edits user configuration without permission.

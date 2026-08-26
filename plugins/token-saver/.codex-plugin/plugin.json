@@ -1,6 +1,6 @@
 {
   "name": "token-saver",
-  "version": "0.3.2",
+  "version": "0.3.2-alpha.2",
   "description": "Route tasks through focused workflows and report auditable token savings.",
   "author": {
     "name": "wenyu0608",
@@ -14,7 +14,7 @@
   "interface": {
     "displayName": "Token Saver",
     "shortDescription": "Route tasks through efficient context workflows.",
-    "longDescription": "Automatically choose Repomix, focused diff, command, documentation, session, and audit workflows, then report an honest token receipt.",
+    "longDescription": "Automatically choose Repomix, focused diff, command, documentation, session, and audit workflows, capture a pre-filter baseline, then report an honest token receipt.",
     "developerName": "wenyu0608",
     "category": "Productivity",
     "capabilities": ["Context routing", "Context optimization", "Token receipts", "Local scripts"],
